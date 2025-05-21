@@ -25,13 +25,39 @@ public class Main {
 
 
         // Leitura de arquivo usando FileReader e BufferedReader
-        String path = "C:\\Windows\\Temp\\teste-para-java.txt";
-        FileReader fr = null;
-        BufferedReader br = null;
+//        String path = "C:\\Windows\\Temp\\teste-para-java.txt";
+//        FileReader fr = null;
+//        BufferedReader br = null;
+//
+//        try {
+//            fr = new FileReader(path);
+//            br = new BufferedReader(fr);
+//            String line = br.readLine();
+//
+//            while (line != null) {
+//                System.out.println(line);
+//                line = br.readLine();
+//            }
+//        } catch (IOException e) {
+//            System.out.println("Erro " + e.getMessage());
+//        } finally {
+//            try {
+//                if (fr != null) {
+//                    fr.close();
+//                }
+//
+//                if (br != null) {
+//                    br.close();
+//                }
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//        }
 
-        try {
-            fr = new FileReader(path);
-            br = new BufferedReader(fr);
+        // Leitura com FileReader e BufferedReader usando try resources
+        String path = "C:\\Windows\\Temp\\teste-para-java.txt";
+
+        try (BufferedReader br = new BufferedReader(new FileReader(path))) {
             String line = br.readLine();
 
             while (line != null) {
@@ -40,18 +66,6 @@ public class Main {
             }
         } catch (IOException e) {
             System.out.println("Erro " + e.getMessage());
-        } finally {
-            try {
-                if (fr != null) {
-                    fr.close();
-                }
-
-                if (br != null) {
-                    br.close();
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
         }
 
 
