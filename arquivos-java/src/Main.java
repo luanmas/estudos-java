@@ -1,7 +1,4 @@
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.Scanner;
 
 public class Main {
@@ -55,19 +52,32 @@ public class Main {
 //        }
 
         // Leitura com FileReader e BufferedReader usando try resources
-        String path = "C:\\Windows\\Temp\\teste-para-java.txt";
+//        String path = "C:\\Windows\\Temp\\teste-para-java.txt";
+//
+//        try (BufferedReader br = new BufferedReader(new FileReader(path))) {
+//            String line = br.readLine();
+//
+//            while (line != null) {
+//                System.out.println(line);
+//                line = br.readLine();
+//            }
+//        } catch (IOException e) {
+//            System.out.println("Erro " + e.getMessage());
+//        }
 
-        try (BufferedReader br = new BufferedReader(new FileReader(path))) {
-            String line = br.readLine();
-
-            while (line != null) {
-                System.out.println(line);
-                line = br.readLine();
-            }
-        } catch (IOException e) {
-            System.out.println("Erro " + e.getMessage());
-        }
-
+        // Escrita em arquivos usando BufferedWrite e FileWrite
+//        String path = "C:\\Windows\\Temp\\teste-para-escrita.txt";
+//
+//        try (BufferedWriter bw = new BufferedWriter(new FileWriter(path, true))) {
+//            String[] lines = new String[] {"Olá", "Tudo", "Bem?"};
+//
+//            for (String line : lines) {
+//                bw.write(line);
+//                bw.newLine();
+//            }
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
 
     }
 }
