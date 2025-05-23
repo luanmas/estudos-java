@@ -1,4 +1,5 @@
 import java.io.*;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Main {
@@ -79,5 +80,50 @@ public class Main {
 //            e.printStackTrace();
 //        }
 
+        // Manipulação de pastas com File
+//        Scanner sc = new Scanner(System.in);
+//
+//        System.out.println("Digite o caminho do diretório: ");
+//        String path = sc.nextLine();
+//        File file = new File(path);
+//
+//        File[] folders = file.listFiles(File::isDirectory);
+//        System.out.println(("Pastas"));
+//        for (File folder : folders) {
+//            System.out.println(folder);
+//        }
+//
+//        File[] files = file.listFiles(File::isFile);
+//        System.out.println(("Arquivos"));
+//        for (File f : files) {
+//            System.out.println(f);
+//        }
+//
+//        boolean success = new File(path + "/subdiretorio").mkdir();
+//        System.out.println("Diretório criado com sucesso:" + success);
+//
+//        sc.close();
+
+        // Informações do arquivo
+//        Scanner sc = new Scanner(System.in);
+//        System.out.println("Digite o caminho do arquivo: ");
+//        String path = sc.nextLine();
+//        File file = new File(path);
+//
+//        System.out.println("Nome do arquivo: " + file.getName());
+//        System.out.println("Pai do arquivo: " + file.getParent());
+//        System.out.println("Caminho do arquivo: " + file.getPath());
+//
+//        sc.close();
+
+        // Exercicio proposto
+        Locale.setDefault(Locale.US);
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Digite o caminho do csv: ");
+        String path = sc.nextLine();
+        ReadFileCSV readFileCSV = new ReadFileCSV(path);
+        readFileCSV.createFileOutResultCsv();
+
+        sc.close();
     }
 }
